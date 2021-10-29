@@ -218,11 +218,11 @@ session_start();
                                         </tr>
                                     </thead>
                                     <tbody id="contentCliente" class="text-center" >
-                                        
+
                                     </tbody>
                                 </table>
                                 <div class="row justify-content-end m-0">
-                                    <button class="btn btn-primary col-2"><b>AGREGAR</b></button>
+                                    <button data-bs-toggle='modal' data-bs-target='#modalglobal' onclick="agregar('cliente')" class="btn btn-primary col-2"><b>AGREGAR</b></button>
                                 </div>
 
                             </div>
@@ -240,11 +240,11 @@ session_start();
                                         </tr>
                                     </thead>
                                     <tbody id="contentEmpleados" class="text-center" >
-                                        
+
                                     </tbody>
                                 </table>
                                 <div class="row justify-content-end m-0">
-                                    <button class="btn btn-success col-2"><b>AGREGAR</b></button>
+                                    <button data-bs-toggle='modal' data-bs-target='#modalglobal' onclick="agregar('Empleado')" class="btn btn-success col-2"><b>AGREGAR</b></button>
                                 </div>
 
                             </div>
@@ -262,12 +262,12 @@ session_start();
                                         </tr>
                                     </thead>
                                     <tbody id="contentProducto" class="text-center" >
-                                        
-                                        
+
+
                                     </tbody>
                                 </table>
                                 <div class="row justify-content-end m-0">
-                                    <button class="btn btn-secondary col-2"><b>AGREGAR</b></button>
+                                    <button data-bs-toggle='modal' data-bs-target='#modalglobal' onclick="agregar('producto')"  class="btn btn-secondary col-2"><b>AGREGAR</b></button>
                                 </div>
 
                             </div>
@@ -277,15 +277,34 @@ session_start();
                 </div>
             </div>
         </div>
-       
+        <div class="modal fade" id="modalglobal" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form name="formModal" id="formModal" method="POST" action="#">
+                        <div class="modal-body" id="contentModal">
+                            ...error...
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close" >Close</button>
+                            <button type="submit" class="btn btn-primary" id="botonModal">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="dist/js/controllers/cotrollerTablas.js"></script>
         <script type="text/javascript" src="dist/js/controllers/registrarEmpresa.js"></script>
-        
-<?php
-if (isset($_SESSION['nit'])) {
-    $nit = $_SESSION['nit'];
-    echo "<script type='text/javascript' > buscarEmpresa($nit)</script>";
-}
-?>
+
+        <?php
+        if (isset($_SESSION['nit'])) {
+            $nit = $_SESSION['nit'];
+            echo "<script type='text/javascript' > buscarEmpresa($nit)</script>";
+        }
+        ?>
     </body>
 </html>
