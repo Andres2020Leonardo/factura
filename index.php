@@ -217,40 +217,8 @@ session_start();
                                             <th class="py-2">OP.</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="contentUsuarios" class="text-center" >
-                                        <tr>
-                                            <td>1</td>
-                                            <td>108800</td>
-                                            <td>OSCAR ANDRES LOAIZA PABON</td>
-                                            <td>CALLE 20</td>
-                                            <td>3443329</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>108801</td>
-                                            <td>DANIEL PEREZ</td>
-                                            <td>CALLE 22</td>
-                                            <td>3123122</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>108802</td>
-                                            <td>MARIA LOPEZ</td>
-                                            <td>CALLE 32</td>
-                                            <td>323132123</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
+                                    <tbody id="contentCliente" class="text-center" >
+                                        
                                     </tbody>
                                 </table>
                                 <div class="row justify-content-end m-0">
@@ -271,40 +239,8 @@ session_start();
                                             <th class="py-2">OP.</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="contentUsuarios" class="text-center" >
-                                        <tr>
-                                            <td>1</td>
-                                            <td>108803</td>
-                                            <td>ANA MARINA PEREZ CORREA</td>
-                                            <td>CALLE 25</td>
-                                            <td>3123339</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>108804</td>
-                                            <td>JUAN CAMILO MOLINA GUARIN</td>
-                                            <td>CALLE 26</td>
-                                            <td>3282932</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>108805</td>
-                                            <td>DANIEL ANDRES CARMONA LOPEZ</td>
-                                            <td>CALLE 34</td>
-                                            <td>3239238</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
+                                    <tbody id="contentEmpleados" class="text-center" >
+                                        
                                     </tbody>
                                 </table>
                                 <div class="row justify-content-end m-0">
@@ -325,40 +261,9 @@ session_start();
                                             <th class="py-2">OP.</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="contentUsuarios" class="text-center" >
-                                        <tr>
-                                            <td>1</td>
-                                            <td>101010</td>
-                                            <td>CUADERNO 50h</td>
-                                            <td>2500</td>
-                                            <td>1850</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>101011</td>
-                                            <td>LAPIZ MIRADO 2</td>
-                                            <td>1000</td>
-                                            <td>740</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>101012</td>
-                                            <td>TAJA LAPIZ</td>
-                                            <td>1500</td>
-                                            <td>211</td>
-                                            <td>
-                                                <button class="btn btn-info py-0 px-2" onclick="" ><b>i</b></button>
-                                                <button class="btn btn-danger py-0 px-2" onclick="" > <b>X</b> </button>
-                                            </td>
-                                        </tr>
+                                    <tbody id="contentProducto" class="text-center" >
+                                        
+                                        
                                     </tbody>
                                 </table>
                                 <div class="row justify-content-end m-0">
@@ -372,7 +277,10 @@ session_start();
                 </div>
             </div>
         </div>
+       
+        <script type="text/javascript" src="dist/js/controllers/cotrollerTablas.js"></script>
         <script type="text/javascript" src="dist/js/controllers/registrarEmpresa.js"></script>
+        
 <?php
 if (isset($_SESSION['nit'])) {
     $nit = $_SESSION['nit'];

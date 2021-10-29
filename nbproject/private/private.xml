@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/factura/dist/dataBase/conexion/Conexion.php</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/model/Empresa.php</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/js/controllers/controller.js</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/model/Cliente.php</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/js/controllers/cotrollerTablas.js</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/model/Producto.php</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/model/Empleado.php</file>
+            <file>file:/C:/xampp/htdocs/factura/dist/js/controllers/registrarEmpresa.js</file>
+            <file>file:/C:/xampp/htdocs/factura/index.php</file>
         </group>
     </open-files>
 </project-private>
