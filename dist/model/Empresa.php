@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 header("Content-type: application/json; charset=utf-8");
 $datos = json_decode(file_get_contents("php://input"), true);
 
@@ -101,7 +101,7 @@ if ($datos['op'] == 'registro') {
         $empresa = new Empresa();
         $result = $empresa->buscarEmpresa($nit);
         if($result){
-            session_start();
+            
             $_SESSION['nit']=$empresa->getNit();
             $reps['vali']=true;
             $reps['nit']=$empresa->getNit();

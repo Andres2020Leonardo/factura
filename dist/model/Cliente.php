@@ -55,7 +55,7 @@ class Cliente {
         }
     }
 
-    public function agregar() {
+    public function agregar(){
         include_once '../dataBase/conexion/Conexion.php';
         $conexion = new Conexion();
         $consult = $conexion->getConexion()->prepare("INSERT INTO cliente (documento, nombres,direccion, telefono)
@@ -65,6 +65,19 @@ class Cliente {
         $consult->bindParam(3, $this->direccion, PDO::PARAM_STR);
         $consult->bindParam(4, $this->telefono, PDO::PARAM_STR);
         if ($consult->execute()) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function editar(){
+        include_once '../dataBase/conexion/Conexion.php';
+        $conexion = new Conexion();
+        $consult = $conexion->getConexion()->query("UPDATE cliente SET nombres = '$this->nombres', direccion = '$this->direccion', telefono = '$this->telefono' WHERE (documento = '$this->documento')");
+
+        if ($consult) {
 
             return true;
         } else {
@@ -105,6 +118,22 @@ if ($datos['op'] == 'todos') {
     $cliente = new Cliente();
     $cliente->setCliente($doc, $nom, $dir, $tel);
     if ($cliente->agregar()) {
+        $reps['vali'] = true;
+
+        echo json_encode($reps);
+    } else {
+        $reps['vali'] = false;
+        echo json_encode($reps);
+    }
+} elseif ($datos['op'] == 'editar') {
+
+    $doc = $datos['doc'];
+    $nom = $datos['nom'];
+    $dir = $datos['dir'];
+    $tel = $datos['tel'];
+    $cliente = new Cliente();
+    $cliente->setCliente($doc, $nom, $dir, $tel);
+    if ($cliente->editar()) {
         $reps['vali'] = true;
 
         echo json_encode($reps);

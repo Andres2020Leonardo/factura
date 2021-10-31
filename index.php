@@ -98,8 +98,8 @@ session_start();
                         </div>
                         <div class="row m-0 mt-2">
                             <div class="col-7 p-0">
-                                <label class="label-cliente" for="campo_cliente">Señor(a): </label>
-                                <input class="input-cliente" id="campo_cliente" type="text">
+                                <label class="label-cliente" for="campo_cliente_factura">Señor(a): </label>
+                                <input class="input-cliente" id="campo_cliente_factura" type="text">
                             </div>
                             <div class="col-5 p-0">
                                 <label  class="label-nit-cliente" for="campo_cliente_cc">NIT/CC.</label>
@@ -202,6 +202,9 @@ session_start();
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Productos</button>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link bg-danger" id="contact-tab" onclick="cerrarSesion()" type="button" role="tab" aria-controls="contact" aria-selected="false">Cerrar sesion</button>
+                            </li>
                         </ul>
                         <div class="tab-content borderCompleto h-95" id="myTabContent">
                             <div class="tab-pane fade show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -271,6 +274,7 @@ session_start();
                                 </div>
 
                             </div>
+                           
                         </div>
 
                     </div>
@@ -299,6 +303,7 @@ session_start();
         </div>
         <script type="text/javascript" src="dist/js/controllers/cotrollerTablas.js"></script>
         <script type="text/javascript" src="dist/js/controllers/registrarEmpresa.js"></script>
+        <script type="text/javascript" src="dist/js/controllers/controllerFactura.js"></script>
 
         <?php
         if (isset($_SESSION['nit'])) {
