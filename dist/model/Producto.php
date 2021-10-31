@@ -104,7 +104,19 @@ class Producto {
         $this->cantidad = $cantidad;
     }
 
-
+    public function editar() {
+        include_once '../dataBase/conexion/Conexion.php';
+        $conexion = new Conexion();
+        $consult = $conexion->getConexion()->query("UPDATE producto SET descripcion = '$this->descripcion', precio = '$this->precio', cantidad = '$this->cantidad' WHERE (codigo = '$this->codigo')");
+        
+     
+         if ($consult) {
+            
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
 
@@ -141,6 +153,23 @@ if ($datos['op'] == 'todos') {
     $producto->setProducto($cod, $des, $pre, $can);
    
     if ($producto->agregar()) {
+        $reps['vali'] = true;
+
+        echo json_encode($reps);
+    } else {
+        $reps['vali'] = false;
+        echo json_encode($reps);
+    }
+}elseif ($datos['op'] == 'editar') {
+
+    $cod = $datos['cod'];
+    $des = $datos['des'];
+    $pre = $datos['pre'];
+    $can = $datos['can'];
+    $producto = new Producto();
+    $producto->setProducto($cod, $des, $pre, $can);
+   
+    if ($producto->editar()) {
         $reps['vali'] = true;
 
         echo json_encode($reps);

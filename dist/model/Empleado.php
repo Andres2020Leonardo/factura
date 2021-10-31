@@ -72,6 +72,18 @@ class Empleado {
         }
     }
 
+     public function editar(){
+        include_once '../dataBase/conexion/Conexion.php';
+        $conexion = new Conexion();
+        $consult = $conexion->getConexion()->query("UPDATE empleado SET nombres = '$this->nombres', direccion = '$this->direccion', telefono = '$this->telefono' WHERE (documento = '$this->documento')");
+
+        if ($consult) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 if ($datos['op'] == 'todos') {
@@ -112,6 +124,22 @@ if ($datos['op'] == 'todos') {
         $reps['vali'] = false;
         echo json_encode($reps);
     }
-}              
+}elseif ($datos['op'] == 'editar') {
+
+    $doc = $datos['doc'];
+    $nom = $datos['nom'];
+    $dir = $datos['dir'];
+    $tel = $datos['tel'];
+    $empleado = new Empleado();
+    $empleado->setEmpleado($doc, $nom, $dir, $tel);
+    if ($empleado->editar()) {
+        $reps['vali'] = true;
+
+        echo json_encode($reps);
+    } else {
+        $reps['vali'] = false;
+        echo json_encode($reps);
+    }
+}                     
 
 
